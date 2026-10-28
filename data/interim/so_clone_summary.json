@@ -1,0 +1,11 @@
+{
+  "k": 5,
+  "min_containment": 0.8,
+  "min_grams": 30,
+  "min_shared": 25,
+  "snippets": 457,
+  "repos": 137,
+  "files_scanned": 52321,
+  "skipped_paths": 305261,
+  "matches": 0
+}

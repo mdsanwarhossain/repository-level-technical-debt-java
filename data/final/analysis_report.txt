@@ -1,0 +1,64 @@
+Repository-level technical debt - analysis report
+=======================================================
+
+RQ2: no Sonar issues attributed to introduced lines yet.
+
+RQ3 - survival of introduced code
+
+  28374 line ranges, 3117 changed inside the window, 25257 right-censored
+    ai        n=13814 events=1052 repos= 18 median exposure    135d alive at HEAD  93.4%
+    baseline  n=14185 events=1964 repos= 18 median exposure     53d alive at HEAD  88.1%
+    so        n=  375 events= 101 repos= 11 median exposure   3108d alive at HEAD  20.7%
+  KM median time-to-first-change, ai: inf
+  KM median time-to-first-change, baseline: inf
+  KM median time-to-first-change, so: inf
+
+  PRIMARY  log-rank ai vs baseline: p=3.52e-150
+  853 introduction commits contribute 27999 line ranges (mean 32.8 per commit)
+
+  Cox proportional hazards, stratified by repository, SEs clustered on the introduction commit:
+               coef  exp(coef)  exp(coef) lower 95%  exp(coef) upper 95%             p
+covariate                                                                             
+is_ai     -1.304636   0.271271             0.096966             0.758906  1.293480e-02
+log_lines  0.450662   1.569351             1.388181             1.774164  5.994110e-13
+is_test   -0.265664   0.766697             0.489112             1.201819  2.467097e-01
+
+  AI-attributed lines are touched at 0.27x the hazard of matched non-AI lines in the same repository (p=0.01293).
+  A hazard above 1 means earlier disturbance, which can be remediation or churn - RQ4 separates them.
+
+  WITHIN-REPOSITORY AI vs Stack Overflow
+    11 dual-arm repositories, 13847 ranges (ai=13472, so=375)
+      ai  events= 987 alive at HEAD  93.6% mean file touches  3.82
+      so  events= 101 alive at HEAD  20.7% mean file touches  5.31
+
+    Cox, stratified by repository, clustered on the introduction commit (AI vs SO):
+           exp(coef)  exp(coef) lower 95%  exp(coef) upper 95%         p
+covariate                                                               
+is_ai       0.423183             0.162743             1.100409  0.077778
+log_lines   1.671568             1.354875             2.062286  0.000002
+
+  Stack Overflow arm: 375 ranges, 101 events, 11 repositories - reported for completeness, not powered for inference.
+
+RQ4 - change- and fix-proneness
+
+  ai: mean in-window file touches 3.80 (95% CI 3.69-3.91), mean fix-touches 0.62 (95% CI 0.60-0.65)
+  baseline: mean in-window file touches 2.34 (95% CI 2.27-2.41), mean fix-touches 0.48 (95% CI 0.46-0.50)
+  so: mean in-window file touches 5.31 (95% CI 4.29-6.54), mean fix-touches 0.81 (95% CI 0.49-1.21)
+
+  negative binomial, file touches (offset = log exposure, 18 repositories, fixed effects, SEs clustered on the introduction commit):
+              Coef.  Std.Err.         z         P>|z|    [0.025    0.975]
+Intercept -3.246704  0.410560 -7.907990  2.615771e-15 -4.051387 -2.442021
+is_ai     -0.152893  0.153521 -0.995904  3.192967e-01 -0.453789  0.148004
+log_lines  0.065659  0.039894  1.645833  9.979824e-02 -0.012532  0.143849
+
+  incidence rate ratio for AI attribution: 0.86 (p=0.3193)
+
+EVENT-LEVEL sensitivity analysis (one row per introduction commit)
+
+  877 events across 18 repositories
+    ai        n= 286 changed-in-window  35.3% median exposure     54d lines alive  90.5% mean file touches  4.21
+    baseline  n= 567 changed-in-window  37.2% median exposure     54d lines alive  88.8% mean file touches  4.52
+    so        n=  24 changed-in-window  70.8% median exposure   3152d lines alive  28.4% mean file touches 11.50
+
+  AI vs baseline, any disturbance inside the window: Fisher exact OR=0.921, p=0.599
+  AI vs baseline, file touches: Mann-Whitney p=0.3061, Cliff's delta=-0.042

@@ -1,0 +1,3 @@
+source,channel,repo,intro_sha,added_lines,n_issues,effort_min,effort_per_100_loc
+ai,ai_trailer_copilot,apache/commons-lang,6b98966dd7d440b8b8690e5790ed8c2a1414b9c0,77,0,0,0.0
+ai,ai_trailer_copilot,apache/commons-lang,98fb6efc58ea63eeba75cddc077db4c33b9a40ed,65,0,0,0.0

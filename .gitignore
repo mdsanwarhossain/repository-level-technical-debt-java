@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+env/
+repos/
+build/
+.github_token
+.sonar_token

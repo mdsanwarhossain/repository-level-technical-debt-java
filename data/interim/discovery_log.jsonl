@@ -1,0 +1,360 @@
+{"repo": "turbanoff/RunConfigurationAsAction", "verdict": "discard", "channels": {}}
+{"repo": "mvallim/spring-schema-registry", "verdict": "discard", "channels": {}}
+{"repo": "focamacho/DupeFix-Project", "verdict": "discard", "channels": {}}
+{"repo": "aerosoul94/GhidraSPU", "verdict": "discard", "channels": {}}
+{"repo": "Team254/FRC-2023-Public", "verdict": "discard", "channels": {}}
+{"repo": "FokiDoki/WireRest", "verdict": "discard", "channels": {}}
+{"repo": "alura-cursos/2771-spring-boot", "verdict": "discard", "channels": {}}
+{"repo": "dgudim/Scheduler", "verdict": "discard", "channels": {}}
+{"repo": "apiaddicts/apigen.springboot", "verdict": "discard", "channels": {}}
+{"repo": "java2ch/java-thread", "verdict": "discard", "channels": {}}
+{"repo": "gradle/maven-build-scan-quickstart", "verdict": "keep", "channels": {"ai_trailer_claude": 1}}
+{"repo": "School-of-Company/Gwangju-talent-festival-Server-V2", "verdict": "keep", "channels": {"ai_trailer_claude": 35}}
+{"repo": "Oblivionburn/realai", "verdict": "discard", "channels": {}}
+{"repo": "alexey-lapin/realworld-backend-micronaut", "verdict": "discard", "channels": {}}
+{"repo": "sparna-git/xls2rdf", "verdict": "discard", "channels": {}}
+{"repo": "PolaricServer/aprsd", "verdict": "keep", "channels": {"ai_trailer_copilot": 22, "ai_message_copilot": 22}}
+{"repo": "gimportexportdevs/gexporter", "verdict": "keep", "channels": {"ai_trailer_claude": 4}}
+{"repo": "miaotiao-lin/minecraft-multicore-mod", "verdict": "discard", "channels": {}}
+{"repo": "akitaonrails/tiktok_analysis", "verdict": "keep", "channels": {"ai_trailer_claude": 11}}
+{"repo": "Sunnick/easy-im", "verdict": "discard", "channels": {}}
+{"repo": "LiJinHongPassion/springboot", "verdict": "discard", "channels": {}}
+{"repo": "KeithYokoma/RemoteViewsReader", "verdict": "keep", "channels": {"ai_trailer_claude": 3}}
+{"repo": "robsonbittencourt/jenkins-pipeline-example", "verdict": "discard", "channels": {}}
+{"repo": "sambenz/URingPaxos", "verdict": "discard", "channels": {}}
+{"repo": "lgertel/chat-das-galaxias", "verdict": "discard", "channels": {}}
+{"repo": "adobe/aem-spa-project-core", "verdict": "discard", "channels": {}}
+{"repo": "nature924/No68College-Students-Elective-Course-Selection-System", "verdict": "discard", "channels": {}}
+{"repo": "vishhnuprasath-p/AI-Disease-Detection-Android-App", "verdict": "discard", "channels": {}}
+{"repo": "power4j/DictMapper", "verdict": "discard", "channels": {}}
+{"repo": "dschadow/CloudSecurity", "verdict": "discard", "channels": {}}
+{"repo": "ltearno/typescript2java", "verdict": "discard", "channels": {}}
+{"repo": "tomgibara/bits", "verdict": "discard", "channels": {}}
+{"repo": "aws-cloudformation/cloudformation-cli-java-plugin", "verdict": "discard", "channels": {}}
+{"repo": "kraigs-android/kraigsandroid", "verdict": "discard", "channels": {}}
+{"repo": "Penkov-D/DJI-MSDK-to-PC", "verdict": "discard", "channels": {}}
+{"repo": "c3lang/c3intellij", "verdict": "discard", "channels": {}}
+{"repo": "DiscoDurodeRoer/Biblioteca-DDR-Java", "verdict": "discard", "channels": {}}
+{"repo": "KXJ-WQL/Vision4JPC", "verdict": "discard", "channels": {}}
+{"repo": "TerraFirmaGreg-Team/Core-Modern", "verdict": "discard", "channels": {}}
+{"repo": "Rookout/deployment-examples", "verdict": "discard", "channels": {}}
+{"repo": "Indoqa/solr-spatial-clustering", "verdict": "discard", "channels": {}}
+{"repo": "scylladb/scylla-jmx", "verdict": "discard", "channels": {}}
+{"repo": "romanpierson/vertx-web-accesslog", "verdict": "discard", "channels": {}}
+{"repo": "CXLYJ/iclyj-cloud", "verdict": "discard", "channels": {}}
+{"repo": "lanthale/JeditFX", "verdict": "discard", "channels": {}}
+{"repo": "f-lab-edu/tabling", "verdict": "discard", "channels": {}}
+{"repo": "jjenkov/parsers", "verdict": "discard", "channels": {}}
+{"repo": "StarfireLab/StarFile-tools", "verdict": "discard", "channels": {}}
+{"repo": "ctt-gob-es/fire", "verdict": "discard", "channels": {}}
+{"repo": "ixleo/minio-plus", "verdict": "discard", "channels": {}}
+{"repo": "bcsoft/bc-framework", "verdict": "discard", "channels": {}}
+{"repo": "jcraane/textimagegenerator", "verdict": "discard", "channels": {}}
+{"repo": "kevinboone/androidmusicserver", "verdict": "discard", "channels": {}}
+{"repo": "karatttt/k-job", "verdict": "discard", "channels": {}}
+{"repo": "stpavel/tspu-probe", "verdict": "discard", "channels": {}}
+{"repo": "openworm/org.geppetto.frontend", "verdict": "discard", "channels": {}}
+{"repo": "openFHIR/openfhir", "verdict": "discard", "channels": {}}
+{"repo": "ignasi-p/eq-diagr", "verdict": "discard", "channels": {}}
+{"repo": "HaringeyMobile/World-Weather", "verdict": "discard", "channels": {}}
+{"repo": "Terracotta-OSS/ipc-eventbus", "verdict": "discard", "channels": {}}
+{"repo": "ax1sX/RouteCheck-Alpha", "verdict": "discard", "channels": {}}
+{"repo": "MarchLiu/oliva", "verdict": "discard", "channels": {}}
+{"repo": "yang2wuhen/work_wx", "verdict": "discard", "channels": {}}
+{"repo": "jadler-mocking/jadler", "verdict": "discard", "channels": {}}
+{"repo": "IJ-Apps/Image-Classification-App-with-Custom-TensorFlow-Model", "verdict": "discard", "channels": {}}
+{"repo": "jenkins-infra/repository-permissions-updater", "verdict": "keep", "channels": {"ai_trailer_claude": 5, "ai_trailer_copilot": 1, "ai_trailer_cursor": 1, "ai_message_copilot": 1}}
+{"repo": "lab313ru/ghidra_sega_ldr", "verdict": "discard", "channels": {}}
+{"repo": "penguin86/ojo", "verdict": "discard", "channels": {}}
+{"repo": "JDKDigital/productive-bees", "verdict": "discard", "channels": {}}
+{"repo": "splunk/kafka-connect-splunk", "verdict": "discard", "channels": {}}
+{"repo": "mybatis/spring-native", "verdict": "discard", "channels": {}}
+{"repo": "woowacourse-teams/2023-team-by-team", "verdict": "discard", "channels": {}}
+{"repo": "applidium/Shutterbug", "verdict": "discard", "channels": {}}
+{"repo": "spdx/tools-java", "verdict": "discard", "channels": {}}
+{"repo": "SoulGirlJP/AzureV316", "verdict": "discard", "channels": {}}
+{"repo": "ASSERT-KTH/sorald", "verdict": "keep", "channels": {"ai_trailer_copilot": 3, "ai_message_copilot": 3}}
+{"repo": "quarkiverse/quarkus-renarde", "verdict": "keep", "channels": {"ai_trailer_claude": 13}}
+{"repo": "itzg/mc-image-helper", "verdict": "keep", "channels": {"ai_trailer_copilot": 1, "ai_message_copilot": 1}}
+{"repo": "xwiki/xwiki-commons", "verdict": "keep", "channels": {"ai_trailer_claude": 68, "ai_message_chatgpt": 2}}
+{"repo": "ibm-messaging/event-streams-samples", "verdict": "discard", "channels": {}}
+{"repo": "ds10git/tvbrowserandroid", "verdict": "discard", "channels": {}}
+{"repo": "CodingGay/BlackShadow", "verdict": "discard", "channels": {}}
+{"repo": "chen-gliu/nacos-consul-adapter", "verdict": "discard", "channels": {}}
+{"repo": "android/security-certification-resources", "verdict": "discard", "channels": {}}
+{"repo": "sofastack/sofa-dashboard", "verdict": "discard", "channels": {}}
+{"repo": "TommyLemon/UIGO", "verdict": "discard", "channels": {}}
+{"repo": "122006/Zircon", "verdict": "discard", "channels": {}}
+{"repo": "microblink/blinkinput-android", "verdict": "discard", "channels": {}}
+{"repo": "hzwy23/batch-scheduler", "verdict": "discard", "channels": {}}
+{"repo": "nette-intellij/intellij-neon", "verdict": "discard", "channels": {}}
+{"repo": "crazzyghost/alphavantage-java", "verdict": "discard", "channels": {}}
+{"repo": "Axeryok/CocoaInput", "verdict": "discard", "channels": {}}
+{"repo": "dustlight-cn/auth", "verdict": "keep", "channels": {"ai_message_copilot": 1}}
+{"repo": "actiontech/dble-docs-cn", "verdict": "discard", "channels": {}}
+{"repo": "mguymon/model-citizen", "verdict": "discard", "channels": {}}
+{"repo": "Romeh/spring-boot-sample-app", "verdict": "discard", "channels": {}}
+{"repo": "melin/sqlflow", "verdict": "discard", "channels": {}}
+{"repo": "lpradel/steam-web-api-java", "verdict": "discard", "channels": {}}
+{"repo": "Noahs-ARK/semafor", "verdict": "discard", "channels": {}}
+{"repo": "charlienss/quartz-jpa", "verdict": "discard", "channels": {}}
+{"repo": "Netflix/iep", "verdict": "keep", "channels": {"ai_trailer_claude": 33}}
+{"repo": "openjdk/jdk21u", "verdict": "discard", "channels": {}}
+{"repo": "GishReloaded/Gish-Code-1.12.2", "verdict": "discard", "channels": {}}
+{"repo": "odemolliens/react-native-sim-cards-manager", "verdict": "discard", "channels": {}}
+{"repo": "blongho/worldCountryData", "verdict": "discard", "channels": {}}
+{"repo": "RakambdaOrg/FallingTree", "verdict": "keep", "channels": {"ai_trailer_claude": 1}}
+{"repo": "openrewrite/rewrite-testing-frameworks", "verdict": "keep", "channels": {"ai_trailer_claude": 13, "ai_trailer_copilot": 1, "ai_message_copilot": 1}}
+{"repo": "qdrant/java-client", "verdict": "discard", "channels": {}}
+{"repo": "linagora/tmail-backend", "verdict": "keep", "channels": {"ai_trailer_claude": 64, "ai_message_chatgpt": 2}}
+{"repo": "arun-gupta/lil-kubernetes-for-java", "verdict": "discard", "channels": {}}
+{"repo": "arun-gupta/docker-java-sample", "verdict": "discard", "channels": {}}
+{"repo": "CommonWealthRobotics/CaDoodle-Application", "verdict": "discard", "channels": {}}
+{"repo": "lvlrSajjad/react-native-blur-overlay", "verdict": "keep", "channels": {"ai_trailer_claude": 37}}
+{"repo": "AnJiaoDe/MultiFlowLayout", "verdict": "discard", "channels": {}}
+{"repo": "AndroidAppFactory/AndroidAppFactory", "verdict": "discard", "channels": {}}
+{"repo": "charmy/react-native-stroke-text", "verdict": "discard", "channels": {}}
+{"repo": "robertoestivill/intentbuilder", "verdict": "discard", "channels": {}}
+{"repo": "felipeucelli/JavaTube", "verdict": "discard", "channels": {}}
+{"repo": "ably/ably-pubsub-java", "verdict": "keep", "channels": {"ai_trailer_claude": 15, "ai_trailer_copilot": 2, "ai_message_copilot": 4}}
+{"repo": "NetSPI/BurpExtractor", "verdict": "discard", "channels": {}}
+{"repo": "dustin/java-memcached-client", "verdict": "keep", "channels": {"so_commit_url": 1}}
+{"repo": "ekoz/kbase-doc", "verdict": "discard", "channels": {}}
+{"repo": "victordiaz/PHONK", "verdict": "discard", "channels": {}}
+{"repo": "jdr2021/OSSFileBrowse", "verdict": "discard", "channels": {}}
+{"repo": "dorkbox/SystemTray", "verdict": "discard", "channels": {}}
+{"repo": "milvus-io/milvus-sdk-java", "verdict": "keep", "channels": {"ai_trailer_claude": 9}}
+{"repo": "ForestryMC/ForestryMC", "verdict": "discard", "channels": {}}
+{"repo": "jenkinsci/docker-plugin", "verdict": "keep", "channels": {"ai_trailer_claude": 1}}
+{"repo": "exzhawk/EhViewer", "verdict": "discard", "channels": {}}
+{"repo": "bujiio/buji-pac4j", "verdict": "discard", "channels": {}}
+{"repo": "insideapp-fr/sonar-flutter", "verdict": "discard", "channels": {}}
+{"repo": "spring-petclinic/spring-framework-petclinic", "verdict": "keep", "channels": {"ai_trailer_copilot": 1, "ai_message_copilot": 1}}
+{"repo": "sendgrid/sendgrid-java", "verdict": "keep", "channels": {"ai_trailer_claude": 1}}
+{"repo": "manmal/hn-android", "verdict": "keep", "channels": {"so_commit_url": 1}}
+{"repo": "willyancaetano/junit5-exemplos", "verdict": "discard", "channels": {}}
+{"repo": "Yiuman/citrus", "verdict": "discard", "channels": {}}
+{"repo": "RUB-NDS/WS-Attacker", "verdict": "discard", "channels": {}}
+{"repo": "flamingock/flamingock-java", "verdict": "keep", "channels": {"ai_trailer_claude": 1}}
+{"repo": "icei-pucminas/aeds2", "verdict": "discard", "channels": {}}
+{"repo": "1c-syntax/bsl-language-server", "verdict": "keep", "channels": {"ai_trailer_claude": 1350, "ai_trailer_copilot": 189, "ai_trailer_cursor": 3, "ai_message_copilot": 325}}
+{"repo": "palantir/conjure", "verdict": "discard", "channels": {}}
+{"repo": "dromara/mica-mqtt", "verdict": "keep", "channels": {"ai_trailer_copilot": 3, "ai_message_copilot": 3}}
+{"repo": "antlr/intellij-plugin-v4", "verdict": "discard", "channels": {}}
+{"repo": "akhilkedia/AllTrans", "verdict": "discard", "channels": {}}
+{"repo": "capawesome-team/capacitor-plugins", "verdict": "keep", "channels": {"ai_trailer_claude": 42, "ai_trailer_copilot": 4, "ai_message_copilot": 4}}
+{"repo": "codezjx/AndLinker", "verdict": "discard", "channels": {}}
+{"repo": "alipay/ant-application-security-testing-benchmark", "verdict": "keep", "channels": {"ai_trailer_claude": 2}}
+{"repo": "yaxim-org/yaxim", "verdict": "keep", "channels": {"so_commit_url": 1}}
+{"repo": "openjdk/nashorn", "verdict": "discard", "channels": {}}
+{"repo": "pentaho/pentaho-platform", "verdict": "keep", "channels": {"ai_trailer_copilot": 8, "ai_message_copilot": 8}}
+{"repo": "Netflix/karyon", "verdict": "discard", "channels": {}}
+{"repo": "rzando-org/GitHub-Chinese-Top-Charts", "verdict": "discard", "channels": {}}
+{"repo": "paulschwarz/spring-dotenv", "verdict": "discard", "channels": {}}
+{"repo": "alibaba/innodb-java-reader", "verdict": "discard", "channels": {}}
+{"repo": "Doist/RecyclerViewExtensions", "verdict": "discard", "channels": {}}
+{"repo": "learning-zone/spring-boot-basics", "verdict": "discard", "channels": {}}
+{"repo": "MaxPixelStudios/MinecraftDecompiler", "verdict": "discard", "channels": {}}
+{"repo": "spring-guides/gs-uploading-files", "verdict": "discard", "channels": {}}
+{"repo": "sizovs/PipelinR", "verdict": "discard", "channels": {}}
+{"repo": "xuxueli/xxl-mq", "verdict": "keep", "channels": {"ai_message_copilot": 1}}
+{"repo": "XiaoMi/shepher", "verdict": "discard", "channels": {}}
+{"repo": "ankushchimnani/DSA-Must-Do-Questions", "verdict": "discard", "channels": {}}
+{"repo": "kohlschutter/junixsocket", "verdict": "keep", "channels": {"ai_trailer_claude": 1}}
+{"repo": "mikaelgrev/miglayout", "verdict": "discard", "channels": {}}
+{"repo": "acgist/snail", "verdict": "discard", "channels": {}}
+{"repo": "Daybr4ak/ShiroScan", "verdict": "discard", "channels": {}}
+{"repo": "cloudsimplus/cloudsimplus", "verdict": "keep", "channels": {"ai_trailer_claude": 38, "ai_trailer_copilot": 1, "ai_message_copilot": 1}}
+{"repo": "shinovon/KEmulator", "verdict": "discard", "channels": {}}
+{"repo": "brunocleite/spring-boot-exception-handling", "verdict": "discard", "channels": {}}
+{"repo": "davideas/FlipView", "verdict": "discard", "channels": {}}
+{"repo": "apache/commons-codec", "verdict": "keep", "channels": {"ai_trailer_claude": 1, "ai_trailer_copilot": 2, "ai_message_copilot": 2}}
+{"repo": "Dlmily/Tomato-Novel-Downloader-Lite", "verdict": "discard", "channels": {}}
+{"repo": "daydreamdev/seconds-kill", "verdict": "discard", "channels": {}}
+{"repo": "stoicflame/enunciate", "verdict": "keep", "channels": {"ai_trailer_claude": 17}}
+{"repo": "OpenNative/open-native", "verdict": "discard", "channels": {}}
+{"repo": "Lotus6/AutoRepeater", "verdict": "discard", "channels": {}}
+{"repo": "Swayingleaves/novanova-studio", "verdict": "discard", "channels": {}}
+{"repo": "google/allocation-instrumenter", "verdict": "discard", "channels": {}}
+{"repo": "dekorateio/dekorate", "verdict": "keep", "channels": {"ai_trailer_claude": 4, "ai_trailer_copilot": 2, "ai_message_copilot": 2}}
+{"repo": "hantsy/spring-webmvc-jwt-sample", "verdict": "discard", "channels": {}}
+{"repo": "validator/validator", "verdict": "keep", "channels": {"ai_trailer_claude": 3, "ai_trailer_copilot": 14, "ai_message_copilot": 14, "so_commit_url": 3}}
+{"repo": "jplag/JPlag", "verdict": "keep", "channels": {"ai_trailer_copilot": 5, "ai_message_copilot": 6, "so_commit_url": 1}}
+{"repo": "alibaba/compileflow", "verdict": "discard", "channels": {}}
+{"repo": "GIScience/openrouteservice", "verdict": "keep", "channels": {"ai_trailer_copilot": 22, "ai_message_copilot": 29, "so_commit_url": 2}}
+{"repo": "zhegexiaohuozi/SeimiCrawler", "verdict": "discard", "channels": {}}
+{"repo": "nashtech-garage/yas", "verdict": "discard", "channels": {}}
+{"repo": "boylegu/SpringBoot-vue", "verdict": "discard", "channels": {}}
+{"repo": "w3c/epubcheck", "verdict": "discard", "channels": {}}
+{"repo": "liyupi/yu-ai-code-mother", "verdict": "discard", "channels": {}}
+{"repo": "dromara/MaxKey", "verdict": "discard", "channels": {}}
+{"repo": "senzhk/ADBKeyBoard", "verdict": "discard", "channels": {}}
+{"repo": "ICT-BDA/EasyML", "verdict": "discard", "channels": {}}
+{"repo": "JasonQS/Anti-recall", "verdict": "discard", "channels": {}}
+{"repo": "bit4woo/knife", "verdict": "discard", "channels": {}}
+{"repo": "BiglySoftware/BiglyBT", "verdict": "discard", "channels": {}}
+{"repo": "seaswalker/jdk-sourcecode-analysis", "verdict": "discard", "channels": {}}
+{"repo": "linkedin/dexmaker", "verdict": "discard", "channels": {}}
+{"repo": "elastic/elasticsearch-hadoop", "verdict": "keep", "channels": {"ai_trailer_claude": 3}}
+{"repo": "udacity/ud851-Sunshine", "verdict": "discard", "channels": {}}
+{"repo": "XunMengWinter/CircularAnim", "verdict": "discard", "channels": {}}
+{"repo": "krlvm/PowerTunnel-Android", "verdict": "discard", "channels": {}}
+{"repo": "airsquared/blobsaver", "verdict": "discard", "channels": {}}
+{"repo": "javahongxi/whatsmars", "verdict": "discard", "channels": {}}
+{"repo": "atjiu/pybbs", "verdict": "discard", "channels": {}}
+{"repo": "INRIA/spoon", "verdict": "keep", "channels": {"ai_trailer_claude": 10, "ai_trailer_copilot": 2, "ai_message_copilot": 2}}
+{"repo": "davidfantasy/mybatis-plus-generator-ui", "verdict": "discard", "channels": {}}
+{"repo": "nayuki/Project-Euler-solutions", "verdict": "discard", "channels": {}}
+{"repo": "RuffianZhong/RWidgetHelper", "verdict": "discard", "channels": {}}
+{"repo": "pengrad/java-telegram-bot-api", "verdict": "keep", "channels": {"ai_message_copilot": 1}}
+{"repo": "boycy815/PinchImageView", "verdict": "discard", "channels": {}}
+{"repo": "openmrs/openmrs-core", "verdict": "keep", "channels": {"ai_trailer_claude": 70, "ai_trailer_copilot": 15, "ai_message_copilot": 15}}
+{"repo": "f0ng/captcha-killer-modified", "verdict": "discard", "channels": {}}
+{"repo": "felHR85/UsbSerial", "verdict": "discard", "channels": {}}
+{"repo": "dromara/Jpom", "verdict": "discard", "channels": {}}
+{"repo": "dromara/forest", "verdict": "keep", "channels": {"ai_message_chatgpt": 3}}
+{"repo": "ratpack/ratpack", "verdict": "keep", "channels": {"so_commit_url": 2}}
+{"repo": "apache/servicecomb-java-chassis", "verdict": "discard", "channels": {}}
+{"repo": "primefaces/primefaces", "verdict": "keep", "channels": {"ai_trailer_claude": 40, "ai_trailer_copilot": 1, "ai_trailer_codex": 3, "ai_message_copilot": 2, "so_commit_url": 4}}
+{"repo": "zalexdev/strykerapp", "verdict": "discard", "channels": {}}
+{"repo": "spring-projects/spring-session", "verdict": "keep", "channels": {"ai_trailer_claude": 1}}
+{"repo": "kymjs/KJFrameForAndroid", "verdict": "discard", "channels": {}}
+{"repo": "openremote/core", "verdict": "keep", "channels": {"ai_trailer_claude": 1, "ai_trailer_copilot": 1, "ai_message_copilot": 1}}
+{"repo": "YeautyYE/netty-websocket-spring-boot-starter", "verdict": "discard", "channels": {}}
+{"repo": "geotools/geotools", "verdict": "keep", "channels": {"ai_trailer_copilot": 5, "ai_message_copilot": 5}}
+{"repo": "fabric8io/docker-maven-plugin", "verdict": "keep", "channels": {"ai_trailer_claude": 36}}
+{"repo": "FJ-OMS/oms-erp", "verdict": "discard", "channels": {}}
+{"repo": "Discord4J/Discord4J", "verdict": "discard", "channels": {}}
+{"repo": "BroadleafCommerce/BroadleafCommerce", "verdict": "keep", "channels": {"so_commit_url": 1}}
+{"repo": "turms-im/turms", "verdict": "keep", "channels": {"ai_message_chatgpt": 1}}
+{"repo": "tiann/Leoric", "verdict": "discard", "channels": {}}
+{"repo": "learning-zone/java-basics", "verdict": "discard", "channels": {}}
+{"repo": "anddea/revanced-patches", "verdict": "keep", "channels": {"ai_message_copilot": 1}}
+{"repo": "Automattic/simplenote-android", "verdict": "keep", "channels": {"ai_trailer_claude": 29, "ai_trailer_copilot": 4, "ai_message_copilot": 4, "so_commit_url": 1}}
+{"repo": "dunwu/java-tutorial", "verdict": "discard", "channels": {}}
+{"repo": "evant/binding-collection-adapter", "verdict": "discard", "channels": {}}
+{"repo": "selenide/selenide", "verdict": "keep", "channels": {"ai_trailer_claude": 122, "ai_trailer_cursor": 6}}
+{"repo": "yint-tech/sekiro-open", "verdict": "discard", "channels": {}}
+{"repo": "ssssssss-team/magic-api", "verdict": "discard", "channels": {}}
+{"repo": "LianjiaTech/retrofit-spring-boot-starter", "verdict": "keep", "channels": {"ai_trailer_claude": 16, "ai_trailer_cursor": 2}}
+{"repo": "langchain4j/langchain4j-examples", "verdict": "keep", "channels": {"ai_message_chatgpt": 3}}
+{"repo": "xuchengsheng/spring-reading", "verdict": "discard", "channels": {}}
+{"repo": "happydog-intj/JsBridge", "verdict": "keep", "channels": {"ai_trailer_claude": 8}}
+{"repo": "paascloud/paascloud-master", "verdict": "discard", "channels": {}}
+{"repo": "spinnaker/spinnaker", "verdict": "keep", "channels": {"ai_trailer_claude": 117, "ai_trailer_copilot": 4, "ai_trailer_cursor": 4, "ai_message_copilot": 5, "so_commit_url": 11}}
+{"repo": "OpenFeign/feign", "verdict": "keep", "channels": {"ai_trailer_claude": 5, "ai_trailer_copilot": 6, "ai_message_copilot": 6}}
+{"repo": "hackware1993/MagicIndicator", "verdict": "discard", "channels": {}}
+{"repo": "apache/seatunnel", "verdict": "keep", "channels": {"ai_trailer_claude": 79, "ai_trailer_copilot": 5, "ai_trailer_cursor": 19, "ai_message_copilot": 5, "so_commit_url": 1}}
+{"repo": "lihengming/spring-boot-api-project-seed", "verdict": "discard", "channels": {}}
+{"repo": "YoKeyword/Fragmentation", "verdict": "keep", "channels": {"so_commit_url": 1}}
+{"repo": "spring-projects/spring-security", "verdict": "keep", "channels": {"ai_trailer_claude": 2, "so_commit_url": 1}}
+{"repo": "koral--/android-gif-drawable", "verdict": "keep", "channels": {"ai_trailer_claude": 24}}
+{"repo": "perwendel/spark", "verdict": "discard", "channels": {}}
+{"repo": "flowable/flowable-engine", "verdict": "keep", "channels": {"so_commit_url": 1}}
+{"repo": "checkstyle/checkstyle", "verdict": "keep", "channels": {"ai_message_copilot": 1, "so_commit_url": 1}}
+{"repo": "spring-projects/spring-ai", "verdict": "keep", "channels": {"ai_message_chatgpt": 21, "ai_message_copilot": 1}}
+{"repo": "apache/jmeter", "verdict": "keep", "channels": {"ai_trailer_claude": 15, "ai_trailer_codex": 1, "so_commit_url": 7}}
+{"repo": "MyCATApache/Mycat-Server", "verdict": "discard", "channels": {}}
+{"repo": "crossoverJie/cim", "verdict": "keep", "channels": {"ai_trailer_claude": 1, "ai_trailer_copilot": 14, "ai_message_copilot": 17}}
+{"repo": "json-path/JsonPath", "verdict": "discard", "channels": {}}
+{"repo": "Justson/AgentWeb", "verdict": "keep", "channels": {"ai_trailer_claude": 8}}
+{"repo": "huanghaibin-dev/CalendarView", "verdict": "discard", "channels": {}}
+{"repo": "apache/iceberg", "verdict": "keep", "channels": {"ai_trailer_claude": 43, "ai_trailer_copilot": 10, "ai_trailer_cursor": 10, "ai_trailer_codex": 11, "ai_message_copilot": 11}}
+{"repo": "pockethub/PocketHub", "verdict": "keep", "channels": {"so_commit_url": 1}}
+{"repo": "MuntashirAkon/AppManager", "verdict": "discard", "channels": {}}
+{"repo": "GcsSloop/AndroidNote", "verdict": "discard", "channels": {}}
+{"repo": "loks666/get_jobs", "verdict": "keep", "channels": {"ai_trailer_claude": 30}}
+{"repo": "cabaletta/baritone", "verdict": "keep", "channels": {"ai_trailer_claude": 25}}
+{"repo": "android/testing-samples", "verdict": "discard", "channels": {}}
+{"repo": "frohoff/ysoserial", "verdict": "discard", "channels": {}}
+{"repo": "karatelabs/karate", "verdict": "keep", "channels": {"ai_trailer_claude": 1306, "so_commit_url": 3}}
+{"repo": "Freelander/Android_Data", "verdict": "discard", "channels": {}}
+{"repo": "iflytek/astron-agent", "verdict": "keep", "channels": {"ai_trailer_claude": 14, "ai_trailer_copilot": 5, "ai_message_chatgpt": 1, "ai_message_copilot": 5}}
+{"repo": "aeron-io/aeron", "verdict": "keep", "channels": {"ai_trailer_claude": 4, "so_commit_url": 1}}
+{"repo": "java-native-access/jna", "verdict": "discard", "channels": {}}
+{"repo": "KunMinX/Jetpack-MVVM-Best-Practice", "verdict": "discard", "channels": {}}
+{"repo": "apache/shenyu", "verdict": "keep", "channels": {"ai_trailer_claude": 25, "ai_trailer_copilot": 18, "ai_trailer_cursor": 3, "ai_message_copilot": 23}}
+{"repo": "freeok/so-novel", "verdict": "discard", "channels": {}}
+{"repo": "testcontainers/testcontainers-java", "verdict": "keep", "channels": {"ai_trailer_claude": 5}}
+{"repo": "amitshekhariitbhu/Android-Debug-Database", "verdict": "discard", "channels": {}}
+{"repo": "apache/beam", "verdict": "keep", "channels": {"ai_trailer_claude": 99, "ai_trailer_copilot": 1, "ai_trailer_cursor": 3, "ai_trailer_codex": 1, "ai_message_copilot": 2, "so_commit_url": 4}}
+{"repo": "shwenzhang/AndResGuard", "verdict": "discard", "channels": {}}
+{"repo": "react-native-image-picker/react-native-image-picker", "verdict": "keep", "channels": {"ai_trailer_copilot": 1, "ai_message_copilot": 1, "so_commit_url": 4}}
+{"repo": "google/tsunami-security-scanner", "verdict": "discard", "channels": {}}
+{"repo": "dropwizard/dropwizard", "verdict": "keep", "channels": {"ai_trailer_copilot": 2, "ai_message_copilot": 2, "so_commit_url": 4}}
+{"repo": "krahets/LeetCode-Book", "verdict": "discard", "channels": {}}
+{"repo": "wildfirechat/im-server", "verdict": "discard", "channels": {}}
+{"repo": "snehasishroy/leetcode-companywise-interview-questions", "verdict": "discard", "channels": {}}
+{"repo": "jeecgboot/jimureport", "verdict": "keep", "channels": {"ai_trailer_claude": 10}}
+{"repo": "airbnb/epoxy", "verdict": "discard", "channels": {}}
+{"repo": "junit-team/junit4", "verdict": "keep", "channels": {"so_commit_url": 2}}
+{"repo": "DImuthuUpe/AndroidPdfViewer", "verdict": "discard", "channels": {}}
+{"repo": "pentaho/pentaho-kettle", "verdict": "keep", "channels": {"ai_trailer_copilot": 14, "ai_message_copilot": 17, "so_commit_url": 1}}
+{"repo": "hs-web/hsweb-framework", "verdict": "discard", "channels": {}}
+{"repo": "exadel-inc/CompreFace", "verdict": "keep", "channels": {"so_commit_url": 2}}
+{"repo": "bytedeco/javacv", "verdict": "discard", "channels": {}}
+{"repo": "alibaba/transmittable-thread-local", "verdict": "keep", "channels": {"so_commit_url": 1}}
+{"repo": "apache/tomcat", "verdict": "keep", "channels": {"ai_trailer_claude": 11, "ai_trailer_copilot": 2, "ai_message_chatgpt": 1, "ai_message_copilot": 44, "so_commit_url": 1}}
+{"repo": "AntennaPod/AntennaPod", "verdict": "keep", "channels": {"ai_trailer_claude": 1, "ai_trailer_copilot": 6, "ai_message_copilot": 13, "so_commit_url": 7}}
+{"repo": "apache/shardingsphere-elasticjob", "verdict": "discard", "channels": {}}
+{"repo": "Graylog2/graylog2-server", "verdict": "keep", "channels": {"ai_trailer_claude": 298, "ai_trailer_copilot": 41, "ai_message_copilot": 50, "so_commit_url": 4}}
+{"repo": "krahets/hello-algo", "verdict": "keep", "channels": {"ai_trailer_claude": 2}}
+{"repo": "NationalSecurityAgency/ghidra", "verdict": "keep", "channels": {"ai_trailer_claude": 3, "ai_trailer_cursor": 1}}
+{"repo": "iluwatar/java-design-patterns", "verdict": "keep", "channels": {"ai_trailer_claude": 2, "so_commit_url": 1}}
+{"repo": "macrozheng/mall", "verdict": "discard", "channels": {}}
+{"repo": "spring-projects/spring-boot", "verdict": "keep", "channels": {"ai_trailer_claude": 1, "so_commit_url": 1}}
+{"repo": "doocs/advanced-java", "verdict": "keep", "channels": {"ai_trailer_cursor": 1}}
+{"repo": "elastic/elasticsearch", "verdict": "keep", "channels": {"ai_trailer_claude": 35, "ai_trailer_copilot": 42, "ai_trailer_cursor": 84, "ai_message_chatgpt": 1, "ai_message_copilot": 88, "so_commit_url": 5}}
+{"repo": "MisterBooo/LeetCodeAnimation", "verdict": "keep", "channels": {"ai_trailer_claude": 4}}
+{"repo": "TheAlgorithms/Java", "verdict": "discard", "channels": {}}
+{"repo": "kdn251/interviews", "verdict": "discard", "channels": {}}
+{"repo": "termux/termux-app", "verdict": "keep", "channels": {"so_commit_url": 2}}
+{"repo": "spring-projects/spring-framework", "verdict": "keep", "channels": {"ai_trailer_claude": 1, "ai_trailer_cursor": 1, "so_commit_url": 5}}
+{"repo": "dbeaver/dbeaver", "verdict": "keep", "channels": {"ai_trailer_claude": 21, "ai_trailer_copilot": 40, "ai_trailer_cursor": 6, "ai_message_chatgpt": 10, "ai_message_copilot": 71}}
+{"repo": "google/guava", "verdict": "keep", "channels": {"so_commit_url": 9}}
+{"repo": "skylot/jadx", "verdict": "keep", "channels": {"ai_trailer_copilot": 1, "ai_message_copilot": 1}}
+{"repo": "jeecgboot/JeecgBoot", "verdict": "keep", "channels": {"ai_trailer_claude": 43, "ai_trailer_copilot": 4, "ai_message_chatgpt": 2, "ai_message_copilot": 5}}
+{"repo": "ReactiveX/RxJava", "verdict": "keep", "channels": {"ai_trailer_copilot": 2, "ai_message_copilot": 3, "so_commit_url": 1}}
+{"repo": "lysine-dev/retrofit", "verdict": "keep", "channels": {"so_commit_url": 1}}
+{"repo": "ashishps1/awesome-system-design-resources", "verdict": "discard", "channels": {}}
+{"repo": "apache/dubbo", "verdict": "keep", "channels": {"ai_trailer_claude": 1, "ai_trailer_copilot": 7, "ai_trailer_codex": 1, "ai_message_copilot": 9}}
+{"repo": "TeamNewPipe/NewPipe", "verdict": "keep", "channels": {"so_commit_url": 5}}
+{"repo": "YunaiV/ruoyi-vue-pro", "verdict": "keep", "channels": {"ai_trailer_claude": 9, "ai_trailer_cursor": 1, "ai_message_copilot": 1}}
+{"repo": "halo-dev/halo", "verdict": "keep", "channels": {"ai_trailer_claude": 1, "ai_trailer_copilot": 17, "ai_message_copilot": 19, "so_commit_url": 1}}
+{"repo": "alibaba/arthas", "verdict": "discard", "channels": {}}
+{"repo": "keycloak/keycloak", "verdict": "keep", "channels": {"ai_trailer_claude": 14, "ai_trailer_copilot": 118, "ai_trailer_cursor": 2, "ai_message_copilot": 155, "so_commit_url": 3}}
+{"repo": "eugenp/tutorials", "verdict": "keep", "channels": {"ai_trailer_claude": 7, "ai_trailer_copilot": 1, "ai_message_chatgpt": 3, "ai_message_copilot": 1, "so_commit_url": 1}}
+{"repo": "doocs/leetcode", "verdict": "keep", "channels": {"ai_trailer_claude": 2, "ai_trailer_copilot": 1, "ai_trailer_cursor": 3, "ai_message_chatgpt": 1, "ai_message_copilot": 1}}
+{"repo": "geekxh/hello-algorithm", "verdict": "discard", "channels": {}}
+{"repo": "airbnb/lottie-android", "verdict": "keep", "channels": {"so_commit_url": 1}}
+{"repo": "yuliskov/SmartTube", "verdict": "keep", "channels": {"ai_trailer_claude": 2, "ai_trailer_copilot": 1, "ai_message_copilot": 1}}
+{"repo": "netty/netty", "verdict": "keep", "channels": {"ai_trailer_claude": 3, "ai_trailer_copilot": 1, "ai_message_copilot": 2, "so_commit_url": 5}}
+{"repo": "bumptech/glide", "verdict": "discard", "channels": {}}
+{"repo": "SeleniumHQ/selenium", "verdict": "keep", "channels": {"ai_trailer_claude": 15, "ai_trailer_copilot": 8, "ai_message_chatgpt": 1, "ai_message_copilot": 10, "so_commit_url": 3}}
+{"repo": "zxing/zxing", "verdict": "discard", "channels": {}}
+{"repo": "apache/kafka", "verdict": "keep", "channels": {"ai_trailer_claude": 77, "ai_trailer_copilot": 15, "ai_trailer_cursor": 1, "ai_trailer_codex": 1, "ai_message_copilot": 15, "so_commit_url": 3}}
+{"repo": "xkcoding/spring-boot-demo", "verdict": "discard", "channels": {}}
+{"repo": "Blankj/AndroidUtilCode", "verdict": "discard", "channels": {}}
+{"repo": "alibaba/nacos", "verdict": "keep", "channels": {"ai_trailer_claude": 10, "ai_trailer_copilot": 3, "ai_trailer_cursor": 1, "ai_message_copilot": 20}}
+{"repo": "binarywang/WxJava", "verdict": "keep", "channels": {"ai_message_copilot": 3, "so_commit_url": 1}}
+{"repo": "conductor-oss/conductor", "verdict": "keep", "channels": {"ai_trailer_claude": 99, "ai_message_chatgpt": 1}}
+{"repo": "xuxueli/xxl-job", "verdict": "keep", "channels": {"ai_message_copilot": 2}}
+{"repo": "ityouknow/spring-boot-examples", "verdict": "discard", "channels": {}}
+{"repo": "chinabugotech/hutool", "verdict": "discard", "channels": {}}
+{"repo": "DrKLO/Telegram", "verdict": "keep", "channels": {"ai_trailer_claude": 8}}
+{"repo": "opendataloader-project/opendataloader-pdf", "verdict": "keep", "channels": {"ai_trailer_claude": 535, "ai_trailer_cursor": 3, "ai_message_copilot": 1}}
+{"repo": "kestra-io/kestra", "verdict": "keep", "channels": {"ai_trailer_claude": 320, "ai_trailer_copilot": 16, "ai_trailer_cursor": 5, "ai_trailer_devin": 1, "ai_message_copilot": 106}}
+{"repo": "apolloconfig/apollo", "verdict": "keep", "channels": {"ai_trailer_claude": 2, "ai_trailer_copilot": 3, "ai_trailer_cursor": 1, "ai_message_copilot": 3}}
+{"repo": "alibaba/canal", "verdict": "keep", "channels": {"ai_trailer_claude": 3}}
+{"repo": "Anuken/Mindustry", "verdict": "keep", "channels": {"ai_trailer_copilot": 2, "ai_message_copilot": 2}}
+{"repo": "alibaba/spring-cloud-alibaba", "verdict": "discard", "channels": {}}
+{"repo": "wuyouzhuguli/SpringAll", "verdict": "discard", "channels": {}}
+{"repo": "OtterMind/Chat2DB", "verdict": "keep", "channels": {"ai_trailer_claude": 184, "ai_message_copilot": 1}}
+{"repo": "alibaba/druid", "verdict": "keep", "channels": {"ai_trailer_claude": 33}}
+{"repo": "lenve/vhr", "verdict": "discard", "channels": {}}
+{"repo": "ashishps1/awesome-low-level-design", "verdict": "discard", "channels": {}}
+{"repo": "floci-io/floci", "verdict": "keep", "channels": {"ai_trailer_claude": 1, "ai_trailer_copilot": 1, "ai_trailer_devin": 1, "ai_message_copilot": 25}}
+{"repo": "OpenAPITools/openapi-generator", "verdict": "keep", "channels": {"ai_trailer_claude": 60, "ai_trailer_copilot": 24, "ai_trailer_cursor": 3, "ai_trailer_devin": 3, "ai_message_copilot": 25, "so_commit_url": 5}}
+{"repo": "crossoverJie/JCSprout", "verdict": "discard", "channels": {}}
+{"repo": "iBotPeaches/Apktool", "verdict": "keep", "channels": {"ai_trailer_copilot": 3, "ai_message_copilot": 3}}
+{"repo": "jenkinsci/jenkins", "verdict": "keep", "channels": {"ai_trailer_claude": 6, "ai_trailer_copilot": 18, "ai_trailer_devin": 4, "ai_message_copilot": 23, "so_commit_url": 12}}

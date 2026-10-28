@@ -1,0 +1,74 @@
+[
+  {
+    "host": "apache/commons-lang",
+    "path": "/home/mdsanwarhossain/Downloads/paper software evolution journal/New Paper repository level thesis/repos/host__apache__commons-lang",
+    "java_files": 630,
+    "source_root": "/home/mdsanwarhossain/Downloads/paper software evolution journal/New Paper repository level thesis/repos/host__apache__commons-lang/src/main/java",
+    "java_files_in_root": 264,
+    "root_coverage": 0.419,
+    "loc": 210942
+  },
+  {
+    "host": "google/gson",
+    "path": "/home/mdsanwarhossain/Downloads/paper software evolution journal/New Paper repository level thesis/repos/host__google__gson",
+    "java_files": 264,
+    "source_root": "/home/mdsanwarhossain/Downloads/paper software evolution journal/New Paper repository level thesis/repos/host__google__gson/gson/src/main/java",
+    "java_files_in_root": 86,
+    "root_coverage": 0.326,
+    "loc": 57131
+  },
+  {
+    "host": "apache/commons-io",
+    "path": "/home/mdsanwarhossain/Downloads/paper software evolution journal/New Paper repository level thesis/repos/host__apache__commons-io",
+    "java_files": 583,
+    "source_root": "/home/mdsanwarhossain/Downloads/paper software evolution journal/New Paper repository level thesis/repos/host__apache__commons-io/src/main/java",
+    "java_files_in_root": 277,
+    "root_coverage": 0.475,
+    "loc": 130513
+  },
+  {
+    "host": "junit-team/junit4",
+    "path": "/home/mdsanwarhossain/Downloads/paper software evolution journal/New Paper repository level thesis/repos/host__junit-team__junit4",
+    "java_files": 471,
+    "source_root": "/home/mdsanwarhossain/Downloads/paper software evolution journal/New Paper repository level thesis/repos/host__junit-team__junit4/src/main/java",
+    "java_files_in_root": 219,
+    "root_coverage": 0.465,
+    "loc": 45360
+  },
+  {
+    "host": "square/retrofit",
+    "path": "/home/mdsanwarhossain/Downloads/paper software evolution journal/New Paper repository level thesis/repos/host__square__retrofit",
+    "java_files": 307,
+    "source_root": "/home/mdsanwarhossain/Downloads/paper software evolution journal/New Paper repository level thesis/repos/host__square__retrofit/retrofit/src/main/java",
+    "java_files_in_root": 55,
+    "root_coverage": 0.179,
+    "loc": 39034
+  },
+  {
+    "host": "apache/commons-collections",
+    "path": "/home/mdsanwarhossain/Downloads/paper software evolution journal/New Paper repository level thesis/repos/host__apache__commons-collections",
+    "java_files": 678,
+    "source_root": "/home/mdsanwarhossain/Downloads/paper software evolution journal/New Paper repository level thesis/repos/host__apache__commons-collections/src/main/java",
+    "java_files_in_root": 367,
+    "root_coverage": 0.541,
+    "loc": 145595
+  },
+  {
+    "host": "spring-projects/spring-petclinic",
+    "path": "/home/mdsanwarhossain/Downloads/paper software evolution journal/New Paper repository level thesis/repos/host__spring-projects__spring-petclinic",
+    "java_files": 50,
+    "source_root": "/home/mdsanwarhossain/Downloads/paper software evolution journal/New Paper repository level thesis/repos/host__spring-projects__spring-petclinic/src/main/java",
+    "java_files_in_root": 30,
+    "root_coverage": 0.6,
+    "loc": 4297
+  },
+  {
+    "host": "apache/maven",
+    "path": "/home/mdsanwarhossain/Downloads/paper software evolution journal/New Paper repository level thesis/repos/host__apache__maven",
+    "java_files": 3346,
+    "source_root": "/home/mdsanwarhossain/Downloads/paper software evolution journal/New Paper repository level thesis/repos/host__apache__maven/impl/maven-core/src/main/java",
+    "java_files_in_root": 379,
+    "root_coverage": 0.113,
+    "loc": 430619
+  }
+]
