@@ -23,6 +23,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.ticker import NullFormatter
 import pandas as pd
 import numpy as np
 
@@ -97,44 +98,45 @@ def fig_km():
 
 
 def fig_clustering():
-    """The paper's headline: identical point estimates, different uncertainty.
+    """Four analyses of the same comparison, and why they disagree.
 
-    A dot-and-interval plot, because the comparison is between two *intervals*
-    around the same estimate, not between two magnitudes.
+    The paper's methodological result: AI-attributed code looks markedly more
+    durable under the least careful analysis and exactly as durable under the
+    most careful one. A dot-and-interval plot, because what matters is where
+    each interval sits relative to unity.
     """
     rows = [
-        ("Cox: AI vs. matched baseline",  0.271, 0.248, 0.296, 0.097, 0.759),
-        ("Cox: AI vs. Stack Overflow",    0.423, 0.328, 0.546, 0.163, 1.100),
-        ("Neg. binomial: file touches",   0.858, 0.831, 0.886, 0.635, 1.159),
+        ("Unpaired, exposure-unadjusted",  0.755, 0.603, 0.945, "p=0.013", True),
+        ("Cox, stratified + clustered",    0.452, 0.204, 1.002, "p=0.051", False),
+        ("Neg. binomial, exposure offset", 0.821, 0.642, 1.049, "p=0.115", False),
+        ("Paired, exposure-balanced",      1.000, 0.608, 1.645, "p=1.00",  False),
     ]
-    fig, ax = plt.subplots(figsize=(3.4, 2.1))
+    fig, ax = plt.subplots(figsize=(3.4, 2.3))
     ax.axvline(1.0, color=MUTED, lw=1.0, ls=(0, (4, 3)), zorder=1)
     ax.grid(axis="x", color=GRID, lw=0.6, zorder=0)
     ax.set_axisbelow(True)
 
-    for i, (label, est, nlo, nhi, clo, chi) in enumerate(rows):
+    for i, (label, est, lo, hi, pstr, flagged) in enumerate(rows):
         y = len(rows) - 1 - i
-        ax.plot([nlo, nhi], [y + 0.16] * 2, color=MUTED, lw=4.0,
+        colour = ORANGE if flagged else BLUE
+        ax.plot([lo, hi], [y, y], color=colour, lw=4.0,
                 solid_capstyle="round", zorder=2)
-        ax.plot([clo, chi], [y - 0.16] * 2, color=BLUE, lw=4.0,
-                solid_capstyle="round", zorder=2)
-        for yy, c in ((y + 0.16, MUTED), (y - 0.16, BLUE)):
-            ax.plot([est], [yy], "o", ms=5, color=c, mec="white", mew=1.2,
-                    zorder=3)
+        ax.plot([est], [y], "o", ms=5.5, color=colour, mec="white", mew=1.2,
+                zorder=3)
+        ax.annotate(pstr, xy=(hi, y), xytext=(6, 0), textcoords="offset points",
+                    fontsize=7, color=INK2, va="center")
     ax.set_yticks(range(len(rows)))
     ax.set_yticklabels([r[0] for r in reversed(rows)], fontsize=7.5)
     ax.set_xscale("log")
-    ax.set_xlim(0.07, 2.0)
-    ax.set_xticks([0.1, 0.25, 0.5, 1.0, 2.0])
-    ax.set_xticklabels(["0.1", "0.25", "0.5", "1.0", "2.0"])
-    ax.set_xlabel("Effect size (hazard / incidence rate ratio), log scale")
-    ax.set_title("Same estimates, different uncertainty", loc="left")
-    ax.annotate("naive", xy=(rows[0][3], len(rows) - 1 + 0.16), xytext=(6, 0),
-                textcoords="offset points", fontsize=7, color=MUTED,
-                va="center")
-    ax.annotate("clustered", xy=(rows[0][5], len(rows) - 1 - 0.16), xytext=(6, 0),
-                textcoords="offset points", fontsize=7, color=BLUE, va="center")
-    ax.set_ylim(-0.6, len(rows) - 0.25)
+    ax.set_xlim(0.15, 3.4)
+    ax.set_xticks([0.25, 0.5, 1.0, 2.0])
+    ax.set_xticklabels(["0.25", "0.5", "1.0", "2.0"])
+    # A log axis adds its own minor-tick labels, which collide with the major
+    # ones set above; suppress them.
+    ax.xaxis.set_minor_formatter(NullFormatter())
+    ax.set_xlabel("Effect on disturbance (ratio), log scale")
+    ax.set_title("One comparison, four analyses", loc="left")
+    ax.set_ylim(-0.7, len(rows) - 0.3)
     out = FIGS / "clustering_effect.pdf"
     fig.savefig(out); plt.close(fig)
     print(f"  wrote {out.name}")
@@ -145,7 +147,7 @@ def fig_corpus():
     stages = [
         ("Java repos sampled", 360),
         ("Carry a provenance signal", 134),
-        ("Promoted and measured", 18),
+        ("Promoted and analysed", 43),
     ]
     fig, ax = plt.subplots(figsize=(3.4, 1.5))
     ys = range(len(stages))

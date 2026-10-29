@@ -281,14 +281,68 @@ def event_level(surv: pd.DataFrame, out: list[str]):
         tbl = [[int(a.sum()), int((1 - a).sum())],
                [int(b.sum()), int((1 - b).sum())]]
         orr, pv = stats.fisher_exact(tbl)
-        out.append(f"\n  AI vs baseline, any disturbance inside the window: "
-                   f"Fisher exact OR={orr:.3f}, p={pv:.4g}")
+        out.append(f"\n  UNPAIRED, exposure-unadjusted (reported for completeness only):")
+        out.append(f"    any disturbance in window: Fisher exact OR={orr:.3f}, p={pv:.4g}")
         ta = pair.loc[pair["source"] == "ai", "file_touches"]
         tb = pair.loc[pair["source"] == "baseline", "file_touches"]
         u = stats.mannwhitneyu(ta, tb, alternative="two-sided")
         delta = 2 * u.statistic / (len(ta) * len(tb)) - 1
-        out.append(f"  AI vs baseline, file touches: Mann-Whitney p={u.pvalue:.4g}, "
+        out.append(f"    file touches: Mann-Whitney p={u.pvalue:.4g}, "
                    f"Cliff's delta={delta:+.3f}")
+
+        # Those two tests ignore exposure, and exposure is NOT balanced: controls
+        # carry a mean of 7.0 days more post-introduction history than the events
+        # they are matched to (Wilcoxon p=6.7e-10), because the matcher minimises
+        # |date difference| without constraining its direction. More days at risk
+        # means more opportunity to be disturbed, which biases both tests towards
+        # finding AI code more durable. The paired analysis below removes it.
+        events = {}
+        for _, r in g.iterrows():
+            events[r[CLUSTER]] = r
+        links = []
+        f = INTERIM / "introduction_events.jsonl"
+        if f.exists():
+            for line in f.read_text().splitlines():
+                if not line.strip():
+                    continue
+                e = json.loads(line)
+                if e.get("source") == "baseline" and e.get("matched_to"):
+                    links.append((e["intro_sha"], e["matched_to"]))
+        rows_p = []
+        for c_sha, t_sha in links:
+            c, t = events.get(c_sha), events.get(t_sha)
+            if c is None or t is None:
+                continue
+            rows_p.append({"d_exposure": c["observed_days"] - t["observed_days"],
+                           "ctrl_changed": int(c["any_changed"]),
+                           "ai_changed": int(t["any_changed"]),
+                           "ctrl_touch": c["file_touches"],
+                           "ai_touch": t["file_touches"]})
+        pf = pd.DataFrame(rows_p)
+        out.append(f"\n  PAIRED analysis over {len(pf)} matched pairs:")
+        if len(pf):
+            w = stats.wilcoxon(pf["ctrl_changed"] * 0 + pf["d_exposure"]) \
+                if pf["d_exposure"].abs().sum() else None
+            out.append(f"    exposure imbalance (control - AI): "
+                       f"mean {pf['d_exposure'].mean():+.1f} d, "
+                       f"median {pf['d_exposure'].median():+.0f} d")
+            for tol in (0, 7, 30):
+                sub = pf[pf["d_exposure"].abs() <= tol]
+                if len(sub) < 20:
+                    out.append(f"    |exposure diff| <= {tol:>2d} d: only "
+                               f"{len(sub)} pairs, skipped")
+                    continue
+                # McNemar on the discordant pairs: the paired analogue of Fisher,
+                # and the correct test for a matched binary outcome.
+                b_ = int(((sub["ai_changed"] == 1) & (sub["ctrl_changed"] == 0)).sum())
+                c_ = int(((sub["ai_changed"] == 0) & (sub["ctrl_changed"] == 1)).sum())
+                pv2 = stats.binomtest(b_, b_ + c_, 0.5).pvalue if (b_ + c_) else 1.0
+                orp = (b_ / c_) if c_ else float("inf")
+                out.append(f"    |exposure diff| <= {tol:>2d} d: n={len(sub):>4d} pairs, "
+                           f"AI-only disturbed={b_}, control-only={c_}, "
+                           f"paired OR={orp:.2f}, McNemar p={pv2:.4g}")
+        else:
+            out.append("    no matched pairs with both arms tracked")
     g.to_csv(FINAL / "event_level_table.csv", index=False)
     out.append("")
 

@@ -29,10 +29,10 @@ repository in the same period**.
 | `ai_trailer_claude` / `copilot` / `cursor` / `codex` / `devin` commits | 5,735 / 772 / 164 / 19 / 9 |
 | `so_commit_url` commits | 141 |
 | Repos with AI trailer / SO citation / **both** | 107 / 49 / **31** |
-| Repositories promoted to full clones and measured | 18 |
-| Introduction events located (eligible) | 320 (313) |
-| Matched within-repository controls (eligible) | 576 (567) |
-| Tracked line ranges | 28,374 over 877 events |
+| Repositories promoted / contributing tracked events | 56 / 43 |
+| Introduction events located (eligible) | 612 (600) |
+| Matched within-repository controls (eligible) | 1,062 (1,046) |
+| Tracked line ranges | 53,241 over 1,635 events |
 
 ## Headline results
 
@@ -42,27 +42,31 @@ repository in the same period**.
    **no Java repository appeared in 500 sampled trailer commits**. Stack
    Overflow answer URLs are **absent** from Java source comments — zero hits
    across all promoted repositories.
-2. **Inference choices reverse the conclusion.** One introduction commit
-   contributes a mean of 32.8 line ranges (max 6,604); those rows are not
-   independent. Clustering standard errors on the commit leaves every point
-   estimate unchanged and widens every interval by about an order of magnitude:
+2. **Two analysis choices decide the answer.** Asking whether AI-attributed
+   code is disturbed less often than matched code in the same project gives
+   four answers depending on how line ranges and exposure are handled:
 
-   | Model | Naive *p* | Clustered *p* |
+   | Analysis | Ratio (95% CI) | *p* |
    |---|---|---|
-   | Cox, AI vs. matched baseline (HR 0.27) | 7×10⁻¹⁸³ | **0.013** |
-   | Cox, AI vs. Stack Overflow (HR 0.42) | 3×10⁻¹¹ | **0.078** |
-   | Negative binomial, file touches (IRR 0.86) | 2×10⁻²⁰ | **0.319** |
+   | Unpaired, exposure-unadjusted | 0.76 (0.60–0.95) | 0.013 |
+   | Cox, stratified + clustered SEs | 0.45 (0.20–1.00) | 0.051 |
+   | Negative binomial, exposure offset | 0.82 (0.64–1.05) | 0.115 |
+   | **Paired, exposure-balanced (McNemar)** | **1.00 (0.61–1.65)** | **1.00** |
 
-   The event-level analysis (one row per commit) finds no difference at all
-   (Fisher *p* = 0.599, Cliff's δ = −0.04). **We report no reliable difference.**
+   One commit contributes a mean of 31 line ranges, which are not independent;
+   and matched controls carry a mean of 7.0 days more exposure than the events
+   they match (Wilcoxon *p* = 7×10⁻¹⁰), giving them more opportunity to be
+   disturbed. Controlling for both removes the effect entirely.
+   **We report no reliable difference.**
 3. **Injection cannot make a snippet study repository-level.** Six of six
    snippet variants produced identical measurements across two architecturally
    distinct hosts, and the only architecture-level change was an artifact of
    adding an unreferenced class. A new compilation unit has no architectural
    relationship to its host and no subsequent history.
-4. **Attribution is mechanically sound but not semantically validated.** All
-   **320/320** located events were confirmed to carry the claimed evidence in
-   their commit message. Whether a trailer-bearing commit genuinely introduces
+4. **Attribution is mechanically sound but not semantically validated.** Every
+   located event was confirmed to carry the claimed evidence in its commit
+   message, and an automated screen over all 612 events puts an upper bound of
+   **87.3%** on precision (97.2% well-formed trailers, 0.3% reverts). Whether a trailer-bearing commit genuinely introduces
    tool-written code requires human rating, which we specify and release but did
    not execute — the study's principal limitation.
 
