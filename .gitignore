@@ -5,3 +5,4 @@ repos/
 build/
 .github_token
 .sonar_token
+manuscript/

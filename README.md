@@ -88,9 +88,10 @@ pipeline/        p0–p10 analysis stages, plus config, store, designite,
 data/interim/    the mined corpus — see "Dataset" below
 data/final/      analysis outputs: the report the paper is written from,
                  per-RQ tables, KM curves, and the blinded validation sheets
-figures/         the manuscript figures, as published
-manuscript/      LaTeX source, bibliography and compiled PDF
+figures/         the manuscript figures, as published (PDF and EPS)
 docs/            full protocol and an operational runbook
+RESULTS_MAP.md   every reported number, and the file and command behind it
+ENVIRONMENT.md   tool versions and analyser caveats
 ```
 
 ## Dataset
@@ -116,6 +117,14 @@ analysis), `rq3_km_curves.csv`, the Cox and negative-binomial summaries, and
 **Note on `validation/_key.csv`:** it maps sheet rows to provenance channels. It
 is published for transparency but must be withheld from raters, or the blinding
 is broken.
+
+## Verifying the paper's numbers
+
+**`RESULTS_MAP.md` maps every claim in the paper to the file that contains it
+and the command that regenerates it.** Start there.
+
+The manuscript itself is not included in this repository while the paper is
+under review.
 
 ## Reproducing
 
