@@ -228,6 +228,15 @@ def main():
     ap.add_argument("--token", help="SonarQube user token "
                     "(default: $SONAR_TOKEN or .sonar_token)")
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--per-arm", type=int, default=0,
+                    help="measure a stratified sample of this many events per "
+                         "arm (ai / baseline / so). A cost comparison needs all "
+                         "three arms; taking the first N events gives only the "
+                         "arm that happens to sort first.")
+    ap.add_argument("--prefer-small", action="store_true",
+                    help="within each arm, measure events in the smallest "
+                         "repositories first - analyser runtime is dominated by "
+                         "repository size, so this buys far more events per hour")
     ap.add_argument("--at", choices=["intro", "horizon", "both"], default="both")
     a = ap.parse_args()
 
@@ -236,6 +245,27 @@ def main():
         sys.exit("no introduction_events.jsonl - run p3_clone_locate first")
     events = [json.loads(l) for l in f.read_text().splitlines() if l.strip()]
     events = [e for e in events if e["eligible"]]
+
+    if a.prefer_small:
+        sizes = {}
+        for e in events:
+            r = REPOS / e["repo"].replace("/", "__")
+            if e["repo"] not in sizes:
+                try:
+                    sizes[e["repo"]] = sum(1 for _ in r.rglob("*.java"))
+                except OSError:
+                    sizes[e["repo"]] = 10 ** 9
+        events.sort(key=lambda e: sizes.get(e["repo"], 10 ** 9))
+
+    if a.per_arm:
+        bucket: dict[str, list] = {}
+        for e in events:
+            bucket.setdefault(e["source"], []).append(e)
+        events = [e for arm in sorted(bucket)
+                  for e in bucket[arm][: a.per_arm]]
+        print("stratified sample: " + ", ".join(
+            f"{k}={min(len(v), a.per_arm)}" for k, v in sorted(bucket.items())))
+
     if a.limit:
         events = events[: a.limit]
     print(f"{len(events)} eligible events")

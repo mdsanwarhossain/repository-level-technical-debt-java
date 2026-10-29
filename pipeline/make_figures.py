@@ -106,10 +106,10 @@ def fig_clustering():
     each interval sits relative to unity.
     """
     rows = [
-        ("Unpaired, exposure-unadjusted",  0.755, 0.603, 0.945, "p=0.013", True),
-        ("Cox, stratified + clustered",    0.452, 0.204, 1.002, "p=0.051", False),
+        ("Unpaired, exposure-unadjusted",  0.674, 0.540, 0.841, "p=0.0003", True),
+        ("Cox, stratified + clustered",    0.448, 0.212, 0.947, "p=0.035", False),
         ("Neg. binomial, exposure offset", 0.821, 0.642, 1.049, "p=0.115", False),
-        ("Paired, exposure-balanced",      1.000, 0.608, 1.645, "p=1.00",  False),
+        ("Paired, exposure-balanced",      0.909, 0.591, 1.398, "p=0.74",  False),
     ]
     fig, ax = plt.subplots(figsize=(3.4, 2.3))
     ax.axvline(1.0, color=MUTED, lw=1.0, ls=(0, (4, 3)), zorder=1)

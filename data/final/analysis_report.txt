@@ -3,34 +3,38 @@ Repository-level technical debt - analysis report
 
 RQ2 - severity and remediation cost by source
 
-  ai: n=28 events, median remediation 0 min (95% CI 0-0), per 100 LOC 0.0 (95% CI 0.0-0.0)
+  ai: n=39 events, median remediation 0 min (95% CI 0-0), per 100 LOC 0.0 (95% CI 0.0-0.0)
+  baseline: n=40 events, median remediation 0 min (95% CI 0-0), per 100 LOC 0.0 (95% CI 0.0-0.0)
+  so: n=40 events, median remediation 0 min (95% CI 0-0), per 100 LOC 0.0 (95% CI 0.0-0.0)
 
   severity counts:
-        sev_critical  sev_major
-source                         
-ai               1.0       10.0
+          sev_major  sev_critical  sev_blocker  sev_minor
+source                                                   
+ai              1.0           1.0          0.0        0.0
+baseline        0.0           0.0          1.0        0.0
+so              2.0           0.0          2.0      413.0
 
 RQ3 - survival of introduced code
 
-  53241 line ranges, 6837 changed inside the window, 46404 right-censored
+  62706 line ranges, 7654 changed inside the window, 55052 right-censored
     ai        n=19445 events=1762 repos= 33 median exposure    104d alive at HEAD  92.3%
-    baseline  n=29287 events=3874 repos= 33 median exposure     63d alive at HEAD  89.1%
+    baseline  n=38752 events=4691 repos= 43 median exposure     96d alive at HEAD  84.2%
     so        n= 4509 events=1201 repos= 34 median exposure   2771d alive at HEAD  55.6%
   KM median time-to-first-change, ai: inf
   KM median time-to-first-change, baseline: inf
   KM median time-to-first-change, so: inf
 
-  PRIMARY  log-rank ai vs baseline: p=2.375e-78
-  1567 introduction commits contribute 48732 line ranges (mean 31.1 per commit)
+  PRIMARY  log-rank ai vs baseline: p=4.118e-17
+  1703 introduction commits contribute 58197 line ranges (mean 34.2 per commit)
 
   Cox proportional hazards, stratified by repository, SEs clustered on the introduction commit:
                coef  exp(coef)  exp(coef) lower 95%  exp(coef) upper 95%             p
 covariate                                                                             
-is_ai     -0.794723   0.451706             0.203701             1.001657  5.047805e-02
-log_lines  0.436626   1.547477             1.454663             1.646212  1.545773e-43
-is_test   -0.313221   0.731089             0.579384             0.922515  8.298979e-03
+is_ai     -0.803926   0.447569             0.211588             0.946734  3.545143e-02
+log_lines  0.434628   1.544389             1.450394             1.644475  6.357882e-42
+is_test   -0.296260   0.743594             0.597318             0.925691  8.028544e-03
 
-  AI-attributed lines are touched at 0.45x the hazard of matched non-AI lines in the same repository (p=0.05048).
+  AI-attributed lines are touched at 0.45x the hazard of matched non-AI lines in the same repository (p=0.03545).
   A hazard above 1 means earlier disturbance, which can be remediation or churn - RQ4 separates them.
 
   WITHIN-REPOSITORY AI vs Stack Overflow
@@ -48,31 +52,39 @@ log_lines   1.695199             1.489292             1.929574  1.368985e-15
 
 RQ4 - change- and fix-proneness
 
-  ai: mean in-window file touches 3.49 (95% CI 3.38-3.61), mean fix-touches 0.53 (95% CI 0.50-0.55)
-  baseline: mean in-window file touches 2.96 (95% CI 2.86-3.07), mean fix-touches 0.49 (95% CI 0.47-0.51)
+  ai: mean in-window file touches 3.49 (95% CI 3.38-3.60), mean fix-touches 0.53 (95% CI 0.50-0.55)
+  baseline: mean in-window file touches 3.17 (95% CI 3.09-3.26), mean fix-touches 0.44 (95% CI 0.42-0.45)
   so: mean in-window file touches 6.00 (95% CI 5.80-6.21), mean fix-touches 0.60 (95% CI 0.56-0.64)
 
-  negative binomial, file touches (offset = log exposure, 33 repositories, fixed effects, SEs clustered on the introduction commit):
-              Coef.  Std.Err.         z         P>|z|    [0.025    0.975]
-Intercept -3.207580  0.414786 -7.733104  1.049555e-14 -4.020545 -2.394615
-is_ai     -0.197658  0.125420 -1.575973  1.150320e-01 -0.443476  0.048160
-log_lines  0.052597  0.028566  1.841244  6.558578e-02 -0.003391  0.108586
+  negative binomial, file touches (offset = log exposure, 43 repositories, SEs clustered on the introduction commit):
+              Coef.  Std.Err.          z         P>|z|    [0.025    0.975]
+Intercept -3.770568  0.279720 -13.479794  2.056812e-41 -4.318810 -3.222327
+is_ai      0.265904  0.235381   1.129677  2.586124e-01 -0.195434  0.727242
+log_lines  0.188789  0.084401   2.236805  2.529910e-02  0.023366  0.354212
 
-  incidence rate ratio for AI attribution: 0.82 (p=0.115)
+  incidence rate ratio for AI attribution: 1.30 (p=0.2586)
 
 EVENT-LEVEL sensitivity analysis (one row per introduction commit)
 
-  1635 events across 43 repositories
+  1771 events across 43 repositories
     ai        n= 521 changed-in-window  34.2% median exposure     39d lines alive  89.5% mean file touches  6.36
-    baseline  n=1046 changed-in-window  40.7% median exposure     65d lines alive  88.8% mean file touches  7.25
+    baseline  n=1182 changed-in-window  43.5% median exposure     82d lines alive  82.8% mean file touches  8.00
     so        n=  68 changed-in-window  61.8% median exposure   3107d lines alive  38.5% mean file touches 14.04
 
   UNPAIRED, exposure-unadjusted (reported for completeness only):
-    any disturbance in window: Fisher exact OR=0.755, p=0.01314
-    file touches: Mann-Whitney p=0.02086, Cliff's delta=-0.070
+    any disturbance in window: Fisher exact OR=0.674, p=0.0003305
+    file touches: Mann-Whitney p=7.545e-05, Cliff's delta=-0.118
 
-  PAIRED analysis over 1046 matched pairs:
-    exposure imbalance (control - AI): mean +7.0 d, median +0 d
-    |exposure diff| <=  0 d: n= 208 pairs, AI-only disturbed=35, control-only=35, paired OR=1.00, McNemar p=1
-    |exposure diff| <=  7 d: n= 814 pairs, AI-only disturbed=109, control-only=133, paired OR=0.82, McNemar p=0.1391
-    |exposure diff| <= 30 d: n= 937 pairs, AI-only disturbed=126, control-only=152, paired OR=0.83, McNemar p=0.1336
+  PAIRED analysis over 1182 matched pairs:
+    exposure imbalance (control - AI): mean +6.3 d, median +0 d
+    |exposure diff| <=  0 d: n= 249 pairs, AI-only disturbed=40, control-only=44, paired OR=0.91, McNemar p=0.7436
+    |exposure diff| <=  7 d: n= 932 pairs, AI-only disturbed=127, control-only=154, paired OR=0.82, McNemar p=0.1207
+    |exposure diff| <= 30 d: n=1068 pairs, AI-only disturbed=146, control-only=174, paired OR=0.84, McNemar p=0.1311
+
+ARM vs ITS OWN CONTEMPORANEOUS BASELINE (era-free comparison)
+
+  ai :  937 exposure-balanced pairs, paired OR=0.83 (95% CI 0.65-1.05), McNemar p=0.1336
+  so :  131 exposure-balanced pairs, paired OR=0.91 (95% CI 0.50-1.67), McNemar p=0.8776
+
+  Difference between arms (ratio of paired odds ratios): 0.91, z=-0.28, p=0.7808
+  This is the era-free form of the AI-versus-crowdsourced comparison: each arm measured against the code written beside it, then the two effects compared.

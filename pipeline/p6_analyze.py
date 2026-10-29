@@ -347,6 +347,84 @@ def event_level(surv: pd.DataFrame, out: list[str]):
     out.append("")
 
 
+def arm_vs_own_baseline(surv: pd.DataFrame, out: list[str]):
+    """Compare each arm against its OWN contemporaneous baseline.
+
+    A direct AI-versus-Stack-Overflow contrast is confounded by era: the two
+    arms differ in post-introduction exposure by roughly eighty to one, because
+    AI-attributed code cannot predate 2023 while cited Stack Overflow code goes
+    back a decade. Censoring equalises the observation window but cannot
+    manufacture AI code that has been watched as long.
+
+    Matching each arm to non-attributed commits from the same repositories in
+    the same weeks removes the problem rather than adjusting for it. The
+    quantity compared is then not "AI versus SO" but "how AI-attributed code
+    behaves relative to the code written beside it" against "how SO-attributed
+    code behaves relative to the code written beside it". Both are measured on
+    their own era's terms, so the comparison is era-free.
+    """
+    from scipy import stats
+    f = INTERIM / "introduction_events.jsonl"
+    if not f.exists():
+        return
+    events = [json.loads(l) for l in f.read_text().splitlines() if l.strip()]
+    arm_of = {e["intro_sha"]: e.get("matched_source") for e in events
+              if e.get("source") == "baseline" and e.get("matched_to")}
+    link = {e["intro_sha"]: e["matched_to"] for e in events
+            if e.get("source") == "baseline" and e.get("matched_to")}
+    if not any(arm_of.values()):
+        return
+
+    g = surv.groupby([CLUSTER, "source"], as_index=False).agg(
+        any_changed=("event_observed", "max"),
+        observed_days=("observed_days", "first"))
+    rec = {r[CLUSTER]: r for _, r in g.iterrows()}
+
+    out.append("ARM vs ITS OWN CONTEMPORANEOUS BASELINE "
+               "(era-free comparison)\n")
+    results = {}
+    for arm in ("ai", "so"):
+        pairs = [(c, t) for c, t in link.items() if arm_of.get(c) == arm]
+        rows = []
+        for c_sha, t_sha in pairs:
+            c, t = rec.get(c_sha), rec.get(t_sha)
+            if c is None or t is None:
+                continue
+            rows.append((c["observed_days"] - t["observed_days"],
+                         int(t["any_changed"]), int(c["any_changed"])))
+        if len(rows) < 20:
+            out.append(f"  {arm}: only {len(rows)} matched pairs tracked, skipped")
+            continue
+        d = pd.DataFrame(rows, columns=["d_exp", "treated", "control"])
+        bal = d[d["d_exp"].abs() <= 30]
+        b_ = int(((bal["treated"] == 1) & (bal["control"] == 0)).sum())
+        c_ = int(((bal["treated"] == 0) & (bal["control"] == 1)).sum())
+        if b_ + c_ == 0:
+            out.append(f"  {arm}: no discordant pairs, skipped")
+            continue
+        orr = b_ / c_ if c_ else float("inf")
+        pv = stats.binomtest(b_, b_ + c_, 0.5).pvalue
+        se = (1.0 / max(b_, 0.5) + 1.0 / max(c_, 0.5)) ** 0.5
+        lo, hi = np.exp(np.log(max(orr, 1e-9)) - 1.96 * se), \
+                 np.exp(np.log(max(orr, 1e-9)) + 1.96 * se)
+        results[arm] = (np.log(max(orr, 1e-9)), se, len(bal))
+        out.append(f"  {arm:3s}: {len(bal):>4d} exposure-balanced pairs, "
+                   f"paired OR={orr:.2f} (95% CI {lo:.2f}-{hi:.2f}), "
+                   f"McNemar p={pv:.4g}")
+
+    if len(results) == 2:
+        (la, sa, na), (ls, ss, ns) = results["ai"], results["so"]
+        z = (la - ls) / ((sa ** 2 + ss ** 2) ** 0.5)
+        pv = 2 * (1 - stats.norm.cdf(abs(z)))
+        ratio = np.exp(la - ls)
+        out.append(f"\n  Difference between arms (ratio of paired odds ratios): "
+                   f"{ratio:.2f}, z={z:+.2f}, p={pv:.4g}")
+        out.append("  This is the era-free form of the AI-versus-crowdsourced "
+                   "comparison: each arm measured against the code written "
+                   "beside it, then the two effects compared.")
+    out.append("")
+
+
 def rq4_process(surv: pd.DataFrame, out: list[str]):
     if surv.empty:
         out.append("RQ4: no survival rows yet.\n")
@@ -410,6 +488,7 @@ def main():
     rq3_survival(surv, out)
     rq4_process(surv, out)
     event_level(surv, out)
+    arm_vs_own_baseline(surv, out)
 
     if not cost.empty:
         cost.to_csv(FINAL / "rq2_cost.csv", index=False)

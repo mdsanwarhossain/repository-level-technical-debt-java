@@ -38,6 +38,20 @@ from .config import INTERIM, FINAL, REPOS
 
 TRAILER_KEY = re.compile(r"^(co-authored-by|signed-off-by|assisted-by|generated-by)\s*:\s*\S",
                          re.I)
+
+# A second, independent marker that the same tools emit alongside the trailer:
+# a generation notice, or a no-reply address on a domain the vendor controls.
+# A developer typing a trailer by hand would not reproduce these, so
+# co-occurrence is convergent evidence that the trailer was machine-written
+# rather than self-reported.
+SECOND_MARKER = re.compile(
+    r"(generated\s+with\s+\[?claude\s+code"          # Claude Code notice
+    r"|noreply@anthropic\.com"                         # vendor no-reply address
+    r"|@users\.noreply\.github\.com.*copilot"
+    r"|copilot-swe-agent"                               # Copilot coding agent
+    r"|cursoragent|cursor@cursor\.com"                 # Cursor agent
+    r"|devin-ai-integration"                            # Devin
+    r"|\bcodex@openai\.com)", re.I)
 AGENT = re.compile(r"\b(claude|copilot|cursor|codex|devin|aider)\b", re.I)
 SO_URL = re.compile(r"https?://(?:[a-z]+\.)?stackoverflow\.com/(?:a|questions)/\d+", re.I)
 REVERT = re.compile(r"^\s*(revert|rollback|back\s?out)\b", re.I)
@@ -86,6 +100,7 @@ def screen_event(ev: dict) -> dict:
     return {
         "status": "screened",
         "well_formed": well_formed,
+        "second_marker": bool(SECOND_MARKER.search(msg)) if not is_so else None,
         "revert": bool(REVERT.match(subject)),
         "substantive_added_lines": substantive,
         "substantive": substantive >= 3,
@@ -111,6 +126,8 @@ def main():
         c = per[e["channel"]]
         c["n"] += 1
         c["well_formed"] += r["well_formed"]
+        if r.get("second_marker"):
+            c["second_marker"] += 1
         c["revert"] += r["revert"]
         c["substantive"] += r["substantive"]
         c["distinct_coauthor"] += r["distinct_coauthor"]
@@ -119,22 +136,31 @@ def main():
         rows.append({**{k: e[k] for k in ("channel", "repo", "intro_sha")},
                      **r, "pass": passes})
 
-    hdr = f"{'channel':22s} {'n':>5s} {'well-formed':>12s} {'revert':>7s} {'substantive':>12s} {'ceiling':>9s}"
+    hdr = (f"{'channel':22s} {'n':>5s} {'well-formed':>12s} {'2nd marker':>11s} "
+           f"{'revert':>7s} {'substantive':>12s} {'ceiling':>9s}")
     print(hdr); print("-" * len(hdr))
     tot = Counter()
     for ch in sorted(per):
         c = per[ch]
         n = c["n"] or 1
-        for k in ("n", "well_formed", "revert", "substantive", "pass"):
+        for k in ("n", "well_formed", "revert", "substantive", "pass", "second_marker"):
             tot[k] += c[k]
+        sm = "n/a" if ch.startswith("so_") else f"{100*c['second_marker']/n:.1f}%"
         print(f"{ch:22s} {c['n']:>5d} {100*c['well_formed']/n:>11.1f}% "
+              f"{sm:>11s} "
               f"{100*c['revert']/n:>6.1f}% {100*c['substantive']/n:>11.1f}% "
               f"{100*c['pass']/n:>8.1f}%")
     n = tot["n"] or 1
     print("-" * len(hdr))
+    ai_n = sum(c["n"] for ch, c in per.items() if ch.startswith("ai_"))
+    ai_sm = sum(c["second_marker"] for ch, c in per.items() if ch.startswith("ai_"))
     print(f"{'ALL':22s} {tot['n']:>5d} {100*tot['well_formed']/n:>11.1f}% "
+          f"{(100*ai_sm/ai_n if ai_n else 0):>10.1f}% "
           f"{100*tot['revert']/n:>6.1f}% {100*tot['substantive']/n:>11.1f}% "
           f"{100*tot['pass']/n:>8.1f}%")
+    print(f"\n  second marker: {ai_sm}/{ai_n} AI-attributed events "
+          f"({100*ai_sm/ai_n if ai_n else 0:.1f}%) carry an independent "
+          f"tool-emitted marker in addition to the trailer")
 
     out = FINAL / "attribution_screen.jsonl"
     with out.open("w") as fh:

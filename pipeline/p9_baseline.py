@@ -126,15 +126,29 @@ def main():
     ap.add_argument("--per-event", type=int, default=2,
                     help="control commits per AI introduction event")
     ap.add_argument("--days", type=int, default=120,
-                    help="era window: how far from the AI commit a control may be")
+                    help="era window: how far from the treated commit a control may be")
+    ap.add_argument("--source", action="append", default=None,
+                    choices=["ai", "so"],
+                    help="which treated arm(s) to match. Matching the Stack "
+                         "Overflow arm to its OWN era's controls is what makes "
+                         "the two arms comparable: AI and SO events are "
+                         "separated by roughly eighty to one in exposure, so a "
+                         "direct AI-vs-SO contrast is confounded by era, "
+                         "whereas each arm's effect relative to its own "
+                         "contemporaneous baseline is not.")
     a = ap.parse_args()
 
     f = INTERIM / "introduction_events.jsonl"
     if not f.exists():
         sys.exit("no introduction_events.jsonl - run p3_clone_locate first")
     events = [json.loads(l) for l in f.read_text().splitlines() if l.strip()]
-    treated = [e for e in events if e["source"] == "ai" and e["eligible"]]
-    print(f"{len(treated)} eligible AI events to match")
+    arms = a.source or ["ai"]
+    treated = [e for e in events if e["source"] in arms and e["eligible"]]
+    already = {e["matched_to"] for e in events
+               if e.get("source") == "baseline" and e.get("matched_to")}
+    treated = [e for e in treated if e["intro_sha"] not in already]
+    print(f"{len(treated)} eligible events to match "
+          f"(arms={arms}; {len(already)} treated events already have controls)")
 
     by_repo: dict[str, list[dict]] = {}
     for e in treated:
@@ -167,6 +181,11 @@ def main():
                     "channel": "baseline_nonai",
                     "source": "baseline",
                     "matched_to": ev["intro_sha"],
+                    # Which arm this control belongs to. Each arm is compared
+                    # against its own contemporaneous baseline; the two effects
+                    # are then compared with each other, which is what removes
+                    # the era confound between the arms.
+                    "matched_source": ev["source"],
                     # Match quality, carried in the data so a weak match can be
                     # excluded in a sensitivity analysis instead of silently
                     # weakening the comparison.

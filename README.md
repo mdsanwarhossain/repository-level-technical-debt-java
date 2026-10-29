@@ -31,8 +31,8 @@ repository in the same period**.
 | Repos with AI trailer / SO citation / **both** | 107 / 49 / **31** |
 | Repositories promoted / contributing tracked events | 56 / 43 |
 | Introduction events located (eligible) | 612 (600) |
-| Matched within-repository controls (eligible) | 1,062 (1,046) |
-| Tracked line ranges | 53,241 over 1,635 events |
+| Matched within-repository controls, both arms | 1,198 (1,180) |
+| Tracked line ranges | 62,706 over 1,771 events |
 
 ## Headline results
 
@@ -48,16 +48,26 @@ repository in the same period**.
 
    | Analysis | Ratio (95% CI) | *p* |
    |---|---|---|
-   | Unpaired, exposure-unadjusted | 0.76 (0.60–0.95) | 0.013 |
-   | Cox, stratified + clustered SEs | 0.45 (0.20–1.00) | 0.051 |
+   | Unpaired, exposure-unadjusted | 0.67 (0.54–0.84) | 0.0003 |
+   | Cox, stratified + clustered SEs | 0.45 (0.21–0.95) | 0.035 |
    | Negative binomial, exposure offset | 0.82 (0.64–1.05) | 0.115 |
-   | **Paired, exposure-balanced (McNemar)** | **1.00 (0.61–1.65)** | **1.00** |
+   | **Paired, exposure-balanced (McNemar)** | **0.91 (0.59–1.40)** | **0.74** |
 
-   One commit contributes a mean of 31 line ranges, which are not independent;
-   and matched controls carry a mean of 7.0 days more exposure than the events
-   they match (Wilcoxon *p* = 7×10⁻¹⁰), giving them more opportunity to be
-   disturbed. Controlling for both removes the effect entirely.
-   **We report no reliable difference.**
+   One commit contributes a mean of 34 line ranges, which are not independent;
+   and matched controls carry a mean of 6.3 days more exposure than the events
+   they match, giving them more opportunity to be disturbed. Controlling for
+   both removes the effect. **We report no reliable difference.**
+
+5. **AI and crowdsourced code behave identically, era confound removed.** Each
+   arm matched to its *own* period's controls: AI vs its baseline OR 0.83
+   (*p* = 0.134), Stack Overflow vs its baseline OR 0.91 (*p* = 0.878), and the
+   two arms do not differ (*p* = 0.781).
+
+6. **Remediation cost at introduction is rare and heavy-tailed.** Median SQALE
+   effort is **0 minutes in every arm**; 2.5–12.5% of events carry any issue on
+   the lines they added. One Stack Overflow commit holds 410 of its arm's 417
+   issues and 12,300 of 12,363 minutes — 98% of the total from one of forty
+   events.
 3. **Injection cannot make a snippet study repository-level.** Six of six
    snippet variants produced identical measurements across two architecturally
    distinct hosts, and the only architecture-level change was an artifact of
